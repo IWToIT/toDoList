@@ -63,3 +63,5 @@ export const selectToDoData = (state: RootState) => state.data;
 export const { setItems } = dataSlice.actions;
 
 export default dataSlice.reducer;
+
+// разделить по папкам селекторы, экшены, запросы, типизацию

@@ -8,7 +8,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -23,7 +23,6 @@ module.exports = {
   },
   devServer: {
     static: path.join(__dirname, 'dist'),
-    compress: true,
     port: 5500,
     hot: true,
     open: true
