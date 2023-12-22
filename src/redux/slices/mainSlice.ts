@@ -24,7 +24,7 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
     const { data } = await axios.get<ToDo[]>("http://localhost:5500/");
     return data;
   } catch (error) {
-    throw new Error(`Failed to fetch data: ${error.message}`);
+    console.log((error as Error).message)
   }
 });
 
@@ -41,20 +41,6 @@ const dataSlice = createSlice({
     setItems(state, action) {
       state.data = action.payload;
     },
-  },
-  extraReducers: builder => {
-    builder
-      .addCase(fetchData.pending, state => {
-        state.status = Status.LOADING;
-      })
-      .addCase(fetchData.fulfilled, (state, action: PayloadAction<ToDo[]>) => {
-        state.status = Status.SUCCESS;
-        state.data = action.payload;
-      })
-      .addCase(fetchData.rejected, (state, action: PayloadAction<string>) => {
-        state.status = Status.ERROR;
-        state.error = action.payload;
-      });
   },
 });
 
