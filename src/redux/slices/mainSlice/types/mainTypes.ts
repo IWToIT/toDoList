@@ -3,3 +3,10 @@ export const enum Status {
   SUCCESS = 'success',
   ERROR = 'error',
 }
+
+export type ToDo = {
+  id: string;
+  title: string;
+  error: string | null;
+  status: Status;
+};

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ToDo } from '../mainSlice';
+import { ToDo } from '../types/mainTypes';
 
 export const fetchData = createAsyncThunk('data/fetchData', async () => {
   try {

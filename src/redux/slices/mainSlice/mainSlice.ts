@@ -1,32 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setItemsReducer } from './reducers/mainReducer';
-import { Status } from './types/mainTypes';
+import { ToDo } from './types/mainTypes';
+import { addToDo } from './reducers/mainReducer';
 
-export type ToDo = {
-  id: number;
-  title: string;
-};
+export const initialState: ToDo[] = [];
 
-const initialState: {
-  data: ToDo[] | null;
-  loading: boolean;
-  error: string | null;
-  status: Status;
-} = {
-  data: null,
-  loading: false,
-  error: null,
-  status: Status.LOADING,
-};
-
-const dataSlice = createSlice({
-  name: 'data',
+export const mainSlice = createSlice({
+  name: 'main',
   initialState,
   reducers: {
-    setItems: setItemsReducer,
+    addToDo,
   },
 });
 
-export const { setItems } = dataSlice.actions;
-
-export default dataSlice.reducer;
+export default mainSlice.reducer;
