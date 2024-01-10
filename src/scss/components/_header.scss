@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
