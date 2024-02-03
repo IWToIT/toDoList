@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack --watch",
+    "build": "webpack --mode=production",
+    "start": "webpack --mode=development --watch",
     "prepare": "husky install",
     "devServer": "webpack-dev-server --config webpack.config.js"
   },

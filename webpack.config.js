@@ -4,7 +4,7 @@ const path = require('path');
 
 let config = {
   entry: './src/index.tsx',
-  mode: "development",
+  mode: 'development',
   devtool: 'inline-source-map',
   module: {
     rules: [
@@ -54,12 +54,13 @@ let config = {
 module.exports = (env, argv) => {
   const isDev = argv.mode === 'development';
   const styleLoader = isDev ? 'style-loader' : MiniCssExtractPlugin.loader;
-  if (argv.mode === 'development') {
-    config.module.rules.push({
-      test: /\.(s[ac]|c)ss$/i,
-      use: [styleLoader, 'css-loader', 'sass-loader'],
-    });
-  }
 
+  config.module.rules.push({
+    test: /\.(s[ac]|c)ss$/i,
+    use: [styleLoader, 'css-loader', 'sass-loader'],
+  });
+
+  console.log(isDev, argv, env);
+  console.dir(config, {depth: null})
   return config;
 };
