@@ -39,6 +39,7 @@
     "lint-staged": "^15.2.0",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "3.1.1",
+    "react-textarea-autosize": "^8.5.3",
     "sass": "^1.69.7",
     "sass-loader": "^13.3.3",
     "style-loader": "^3.3.3",
